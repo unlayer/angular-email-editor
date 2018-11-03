@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "email-editor": [
+        "dist/email-editor"
+      ],
+      "email-editor/*": [
+        "dist/email-editor/*"
+      ]
+    }
   }
 }
