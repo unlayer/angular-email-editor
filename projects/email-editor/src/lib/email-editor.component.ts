@@ -2,6 +2,16 @@ import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
 
 declare module unlayer {
   function init(object);
+  function loadDesign(object);
+  function saveDesign(Function);
+  function exportHtml(Function);
+}
+
+export interface UnlayerOptions {
+  projectId?: number;
+  tools?: object;
+  appearance?: object;
+  locale?: string;
 }
 
 @Component({
@@ -12,8 +22,11 @@ declare module unlayer {
 })
 export class EmailEditorComponent implements OnInit, AfterViewInit {
 
+  @Input() options: UnlayerOptions = {};
   @Input() projectId: number;
-  @Input() templateId: number;
+  @Input() tools: object;
+  @Input() appearance: object;
+  @Input() locale: string;
 
   constructor() { }
 
@@ -30,12 +43,41 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   }
 
   protected loadEditor() {
+    const options: UnlayerOptions = this.options || {};
+
+    if (this.projectId) {
+      options.projectId = this.projectId;
+    }
+
+    if (this.tools) {
+      options.tools = this.tools;
+    }
+
+    if (this.appearance) {
+      options.appearance = this.appearance;
+    }
+
+    if (this.locale) {
+      options.locale = this.locale;
+    }
+
     unlayer.init({
+      ...options,
       id: 'editor',
-      projectId: this.projectId,
-      templateId: this.templateId,
       displayMode: 'email',
     });
+  }
+
+  public loadDesign(data: object) {
+    unlayer.loadDesign(data);
+  }
+
+  public saveDesign(cb: (data: object) => void) {
+    unlayer.saveDesign(cb);
+  }
+
+  public exportHtml(cb: (data: object) => void) {
+    unlayer.exportHtml(cb);
   }
 
 }
