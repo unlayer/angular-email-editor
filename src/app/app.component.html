@@ -1,4 +1,4 @@
 <div class="container">
   <button (click)="exportHtml()">Export</button>
-  <email-editor [projectId]="1" [options]="options"></email-editor>
+  <email-editor [options]="options" (load)="editorLoaded($event)"></email-editor>
 </div>

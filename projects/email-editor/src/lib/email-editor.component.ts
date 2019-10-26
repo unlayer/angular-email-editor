@@ -1,4 +1,4 @@
-import { Component, OnInit, AfterViewInit, Input } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 
 declare module unlayer {
   function init(object);
@@ -29,6 +29,8 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Input() locale: string;
 
   @Input() minHeight = '500px';
+
+  @Output() load = new EventEmitter();
 
   constructor() { }
 
@@ -68,6 +70,8 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
       id: 'editor',
       displayMode: 'email',
     });
+
+    this.load.emit({});
   }
 
   public loadDesign(data: object) {

@@ -24,6 +24,8 @@
       "email-editor/*": [
         "dist/email-editor/*"
       ]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   }
 }

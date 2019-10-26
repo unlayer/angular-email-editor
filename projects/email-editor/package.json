@@ -1,6 +1,6 @@
 {
   "name": "angular-email-editor",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "peerDependencies": {
     "@angular/common": "^7.0.0",
     "@angular/core": "^7.0.0"
