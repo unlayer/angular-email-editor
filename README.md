@@ -19,3 +19,52 @@ The easiest way to use React Email Editor is to install it from NPM and include 
 npm install angular-email-editor --save
 ```
 
+## Usage
+
+Next, you'll need to import the Email Editor module in your app's module.
+
+**app.module.ts**
+
+```ts
+
+import { EmailEditorModule } from 'angular-email-editor';
+...
+
+@NgModule({
+    ...
+    imports: [ EmailEditorModule ],
+    ...
+});
+```
+
+**app.component.ts**
+
+```ts
+import { Component, ViewChild } from '@angular/core';
+import { EmailEditorComponent } from 'angular-email-editor';
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  title = 'angular-email-editor';
+
+  @ViewChild(EmailEditorComponent)
+  private emailEditor: EmailEditorComponent;
+
+  exportHtml() {
+    this.emailEditor.exportHtml((data) => console.log('exportHtml', data));
+  }
+}
+```
+
+**app.component.html**
+
+```html
+<div class="container">
+  <button (click)="exportHtml()">Export</button>
+  <email-editor (load)="editorLoaded($event)"></email-editor>
+</div>
+```
