@@ -28,6 +28,8 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Input() appearance: object;
   @Input() locale: string;
 
+  @Input() minHeight = '500px';
+
   constructor() { }
 
   ngOnInit() {
