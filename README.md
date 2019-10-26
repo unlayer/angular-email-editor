@@ -1,27 +1,21 @@
-# AngularEmailEditor
+# Angular Email Editor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
+The excellent drag-n-drop email editor by [Unlayer](https://unlayer.com) as a [Angular](https://angular.io/) *wrapper component*. This is the most powerful and developer friendly visual email builder for your app.
 
-## Development server
+Video Overview |
+:---: |
+[![Angular Email Editor](https://s3.amazonaws.com/unroll-assets/unrollyoutube.png)](https://www.youtube.com/watch?v=MIWhX-NF3j8) |
+*Watch video overview: https://youtu.be/MIWhX-NF3j8* |
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Live Demo
 
-## Code scaffolding
+Check out the live demo here: https://angular-email-editor-demo.netlify.com/ ([Source Code](https://github.com/unlayer/angular-email-editor/tree/master/src))
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Installation
 
-## Build
+The easiest way to use React Email Editor is to install it from NPM and include it in your own Angular build process.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+```
+npm install angular-email-editor --save
+```
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
