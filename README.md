@@ -69,6 +69,25 @@ export class AppComponent {
 </div>
 ```
 
+### Properties
+
+* `minHeight` `String` minimum height to initialize the editor with (default 500px)
+* `options` `Object` options passed to the Unlayer editor instance (default {})
+* `tools` `Object` configuration for the built-in and custom tools (default {})
+* `appearance` `Object` configuration for appearance and theme (default {})
+* `projectId` `Integer` Unlayer project ID (optional)
+* `loaded` `Function` called when the editor has finished loading
+
+See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
+
+### Methods
+
+* `loadDesign` - `function(Object data)` - Takes the design JSON and loads it in the editor
+* `saveDesign` - `function(Function callback)` - Returns the design JSON in a callback function
+* `exportHtml` - `function(Function callback)` - Returns the design HTML and JSON in a callback function
+
+See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
+
 ## Custom Tools
 
 Custom tools can help you add your own content blocks to the editor. Every application is different and needs different tools to reach it's full potential. [Learn More](https://docs.unlayer.com/docs/custom-tools)
