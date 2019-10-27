@@ -68,3 +68,18 @@ export class AppComponent {
   <email-editor (load)="editorLoaded($event)"></email-editor>
 </div>
 ```
+
+## Custom Tools
+
+Custom tools can help you add your own content blocks to the editor. Every application is different and needs different tools to reach it's full potential. [Learn More](https://docs.unlayer.com/docs/custom-tools)
+
+[![Custom Tools](https://unlayer.com/assets/images/features/custom_tools.png)](https://docs.unlayer.com/docs/custom-tools)
+
+
+## Localization
+
+You can submit new language translations by creating a PR on this GitHub repo: https://github.com/unlayer/translations. Translations managed by [PhraseApp](https://phraseapp.com)
+
+### License
+
+Copyright (c) 2019 Unlayer. [MIT](LICENSE) Licensed.
