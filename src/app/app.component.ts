@@ -21,8 +21,15 @@ export class AppComponent {
     this.emailEditor.loadDesign(sample);
   }
 
+  saveDesign() {
+    this.emailEditor.saveDesign(
+      (data) => console.log('saveDesign', data)
+    );
+  }
+
   exportHtml() {
-    this.emailEditor.exportHtml((data) => console.log('exportHtml', data));
-    this.emailEditor.saveDesign((data) => console.log('saveDesign', data));
+    this.emailEditor.exportHtml(
+      (data) => console.log('exportHtml', data)
+    );
   }
 }

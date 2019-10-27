@@ -1,4 +1,10 @@
 <div class="container">
-  <button (click)="exportHtml()">Export</button>
-  <email-editor [options]="options" (load)="editorLoaded($event)"></email-editor>
+  <div id="bar">
+    <h1>Angular Email Editor (Demo)</h1>
+
+    <button (click)="saveDesign()">Save Design</button>
+    <button (click)="exportHtml()">Export HTML</button>
+  </div>
+
+  <email-editor [options]="options" (loaded)="editorLoaded($event)"></email-editor>
 </div>
