@@ -10,7 +10,8 @@
     "e2e": "ng e2e",
     "build-lib": "ng build email-editor",
     "npm-pack": "cd dist/email-editor && npm pack",
-    "package": "npm run build-lib && npm run npm-pack"
+    "copy-readme": "cp README.md dist/email-editor",
+    "package": "npm run build-lib && npm run copy-readme && npm run npm-pack"
   },
   "private": true,
   "dependencies": {
