@@ -13,7 +13,7 @@ Check out the live demo here: https://angular-email-editor-demo.netlify.com/ ([S
 
 ## Installation
 
-The easiest way to use React Email Editor is to install it from NPM and include it in your own Angular build process.
+The easiest way to use Angular Email Editor is to install it from Npm or Yarn and include it in your own Angular build process.
 
 ```
 npm install angular-email-editor --save
