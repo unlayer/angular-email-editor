@@ -36,7 +36,9 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
     const unlayerScript = document.createElement('script');
-    unlayerScript.setAttribute('src', '//editor.unlayer.com/embed.js');
+    if (!this.scriptTagLoaded()) {
+      unlayerScript.setAttribute('src', '//editor.unlayer.com/embed.js');
+    }
     unlayerScript.onload = () => {
       this.loadEditor();
     };
@@ -44,6 +46,16 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   }
 
   ngAfterViewInit() {
+  }
+
+  private scriptTagLoaded() {
+    let scripts = document.querySelectorAll('script');
+    let res = false
+
+    scripts.forEach(script => {
+      if (script.src.includes("//editor.unlayer.com/embed.js")) { res = true }
+    })
+    return res
   }
 
   protected loadEditor() {
