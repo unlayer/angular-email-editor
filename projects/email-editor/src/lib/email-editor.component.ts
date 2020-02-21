@@ -35,15 +35,33 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit() {
-    const unlayerScript = document.createElement('script');
-    unlayerScript.setAttribute('src', '//editor.unlayer.com/embed.js');
-    unlayerScript.onload = () => {
-      this.loadEditor();
-    };
-    document.head.appendChild(unlayerScript);
+    this.handleScriptTag()
   }
 
   ngAfterViewInit() {
+  }
+
+  private handleScriptTag() {
+    let embedJs = "//editor.unlayer.com/embed.js"
+    let scripts = document.querySelectorAll('script');
+    let scriptLoaded = false
+
+    scripts.forEach(script => {
+      if (script.src.includes(embedJs)) {
+        scriptLoaded = true
+      }
+    })
+
+    if (!scriptLoaded) {
+      const unlayerScript = document.createElement('script');
+      unlayerScript.setAttribute('src', embedJs);
+      unlayerScript.onload = () => {
+        this.loadEditor();
+      };
+      document.head.appendChild(unlayerScript);
+    } else {
+      this.loadEditor();
+    }
   }
 
   protected loadEditor() {
