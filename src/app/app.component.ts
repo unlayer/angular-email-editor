@@ -14,7 +14,7 @@ export class AppComponent {
   options = {
   };
 
-  @ViewChild(EmailEditorComponent)
+  @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
   editorLoaded() {

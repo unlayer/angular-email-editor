@@ -2,6 +2,7 @@ import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@
 
 declare module unlayer {
   function init(object);
+  function createEditor(object);
   function loadDesign(object);
   function saveDesign(Function);
   function exportHtml(Function);
@@ -32,6 +33,8 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
   @Output() loaded = new EventEmitter();
 
+  editor: any;
+
   constructor() { }
 
   ngOnInit() {
@@ -42,7 +45,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   }
 
   private handleScriptTag() {
-    let embedJs = "//editor.unlayer.com/embed.js"
+    let embedJs = "//editor.unlayer.com/embed.js?2"
     let scripts = document.querySelectorAll('script');
     let scriptLoaded = false
 
@@ -83,7 +86,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
       options.locale = this.locale;
     }
 
-    unlayer.init({
+    this.editor = unlayer.createEditor({
       ...options,
       id: 'editor',
       displayMode: 'email',
@@ -93,15 +96,15 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   }
 
   public loadDesign(data: object) {
-    unlayer.loadDesign(data);
+    this.editor.loadDesign(data);
   }
 
   public saveDesign(cb: (data: object) => void) {
-    unlayer.saveDesign(cb);
+    this.editor.saveDesign(cb);
   }
 
   public exportHtml(cb: (data: object) => void) {
-    unlayer.exportHtml(cb);
+    this.editor.exportHtml(cb);
   }
 
 }
