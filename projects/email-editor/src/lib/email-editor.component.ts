@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { loadScript } from './loadScript';
 
 declare module unlayer {
   function init(object);
@@ -38,33 +39,10 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   constructor() { }
 
   ngOnInit() {
-    this.handleScriptTag()
+    loadScript(this.loadEditor);
   }
 
   ngAfterViewInit() {
-  }
-
-  private handleScriptTag() {
-    const embedJs = "//editor.unlayer.com/embed.js?2"
-    const scripts = document.querySelectorAll('script');
-    let scriptLoaded = false
-
-    scripts.forEach(script => {
-      if (script.src.includes(embedJs)) {
-        scriptLoaded = true
-      }
-    })
-
-    if (!scriptLoaded) {
-      const unlayerScript = document.createElement('script');
-      unlayerScript.setAttribute('src', embedJs);
-      unlayerScript.onload = () => {
-        this.loadEditor();
-      };
-      document.head.appendChild(unlayerScript);
-    } else {
-      this.loadEditor();
-    }
   }
 
   protected loadEditor() {
