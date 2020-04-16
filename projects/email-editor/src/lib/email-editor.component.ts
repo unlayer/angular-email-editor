@@ -45,8 +45,8 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   }
 
   private handleScriptTag() {
-    let embedJs = "//editor.unlayer.com/embed.js?2"
-    let scripts = document.querySelectorAll('script');
+    const embedJs = "//editor.unlayer.com/embed.js?2"
+    const scripts = document.querySelectorAll('script');
     let scriptLoaded = false
 
     scripts.forEach(script => {
