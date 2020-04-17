@@ -45,7 +45,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   ngAfterViewInit() {
   }
 
-  protected loadEditor() {
+  protected loadEditor = () => {
     const options: UnlayerOptions = this.options || {};
 
     if (this.projectId) {
@@ -73,15 +73,15 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
     this.loaded.emit({});
   }
 
-  public loadDesign(data: object) {
+  public loadDesign = (data: object) => {
     this.editor.loadDesign(data);
   }
 
-  public saveDesign(cb: (data: object) => void) {
+  public saveDesign = (cb: (data: object) => void) => {
     this.editor.saveDesign(cb);
   }
 
-  public exportHtml(cb: (data: object) => void) {
+  public exportHtml = (cb: (data: object) => void) => {
     this.editor.exportHtml(cb);
   }
 
