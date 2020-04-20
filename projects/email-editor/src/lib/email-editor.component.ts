@@ -16,6 +16,8 @@ export interface UnlayerOptions {
   locale?: string;
 }
 
+let lastEditorId = 0;
+
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'email-editor',
@@ -24,6 +26,7 @@ export interface UnlayerOptions {
 })
 export class EmailEditorComponent implements OnInit, AfterViewInit {
 
+  @Input() editorId: string;
   @Input() options: UnlayerOptions = {};
   @Input() projectId: number;
   @Input() tools: object;
@@ -36,7 +39,9 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
   editor: any;
 
-  constructor() { }
+  constructor() {
+    this.editorId = `editor-${++lastEditorId}`;
+   }
 
   ngOnInit() {
     loadScript(this.loadEditor.bind(this));
@@ -66,7 +71,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
     this.editor = unlayer.createEditor({
       ...options,
-      id: 'editor',
+      id: this.editorId,
       displayMode: 'email',
     });
 
