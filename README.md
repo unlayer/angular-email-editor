@@ -69,6 +69,15 @@ export class AppComponent {
 </div>
 ```
 
+### Methods
+| method          | params                   | description                                                    |
+| --------------- | ------------------------ | -------------------------------------------------------------- |
+| **loadDesign**  | `Object data`            | Takes the design JSON and loads it in the editor               |
+| **saveDesign**  | `Function callback`      | Returns the design JSON in a callback function                 |
+| **exportHtml**  | `Function callback`      | Returns the design HTML and JSON in a callback function        |
+
+See the [example source](https://github.com/unlayer/angular-email-editor/tree/master/src) for a reference implementation.
+
 ### Properties
 
 * `minHeight` `String` minimum height to initialize the editor with (default 500px)
@@ -79,14 +88,6 @@ export class AppComponent {
 * `loaded` `Function` called when the editor has finished loading
 
 See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
-
-### Methods
-
-* `loadDesign` - `function(Object data)` - Takes the design JSON and loads it in the editor
-* `saveDesign` - `function(Function callback)` - Returns the design JSON in a callback function
-* `exportHtml` - `function(Function callback)` - Returns the design HTML and JSON in a callback function
-
-See the [example source](https://github.com/unlayer/react-email-editor/blob/master/demo/src/index.js) for a reference implementation.
 
 ## Custom Tools
 
@@ -101,4 +102,4 @@ You can submit new language translations by creating a PR on this GitHub repo: h
 
 ### License
 
-Copyright (c) 2019 Unlayer. [MIT](LICENSE) Licensed.
+Copyright (c) 2020 Unlayer. [MIT](LICENSE) Licensed.
