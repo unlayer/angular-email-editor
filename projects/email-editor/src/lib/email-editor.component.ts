@@ -1,5 +1,6 @@
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
 import { loadScript } from './loadScript';
+import pkg from './source.json';
 
 declare module unlayer {
   function init(object);
@@ -73,6 +74,10 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
       ...options,
       id: this.editorId,
       displayMode: 'email',
+      source: {
+        name: pkg.name,
+        version: pkg.version,
+      },
     });
 
     this.loaded.emit({});
