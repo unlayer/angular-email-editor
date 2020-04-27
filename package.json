@@ -11,7 +11,8 @@
     "build-lib": "cp projects/email-editor/package.json projects/email-editor/src/lib/source.json && ng build email-editor",
     "npm-pack": "cd dist/email-editor && npm pack",
     "copy-readme": "cp README.md dist/email-editor",
-    "package": "npm run build-lib && npm run copy-readme && npm run npm-pack"
+    "package": "npm run build-lib && npm run copy-readme && npm run npm-pack",
+    "release": "npm run package && cd dist/email-editor && npm publish"
   },
   "private": true,
   "dependencies": {
