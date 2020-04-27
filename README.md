@@ -53,6 +53,11 @@ export class AppComponent {
 
   @ViewChild(EmailEditorComponent)
   private emailEditor: EmailEditorComponent;
+  
+  editorLoaded() {
+    // load the design json here
+    this.emailEditor.loadDesign({});
+  }
 
   exportHtml() {
     this.emailEditor.exportHtml((data) => console.log('exportHtml', data));
