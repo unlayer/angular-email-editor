@@ -1,14 +1,12 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { EmailEditorComponent } from 'email-editor';
 
-import sample from './sample.json';
-
 @Component({
-  selector: 'app-example',
-  templateUrl: './example.component.html',
-  styleUrls: ['./example.component.css']
+  selector: 'app-design-edit',
+  templateUrl: './design-edit.component.html',
+  styleUrls: ['./design-edit.component.css']
 })
-export class ExampleComponent implements OnInit {
+export class DesignEditComponent implements OnInit {
 
   options = {
   };
@@ -22,7 +20,6 @@ export class ExampleComponent implements OnInit {
   private emailEditor: EmailEditorComponent;
 
   editorLoaded(event) {
-    this.emailEditor.loadDesign(sample);
   }
 
   saveDesign() {
