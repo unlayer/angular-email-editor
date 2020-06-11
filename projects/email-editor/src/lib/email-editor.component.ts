@@ -44,11 +44,10 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
     this.editorId = `editor-${++lastEditorId}`;
    }
 
-  ngOnInit() {
-    loadScript(this.loadEditor.bind(this));
-  }
+  ngOnInit() {}
 
   ngAfterViewInit() {
+    loadScript(this.loadEditor.bind(this));
   }
 
   protected loadEditor() {
