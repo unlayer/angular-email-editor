@@ -56,11 +56,11 @@ export class AppComponent {
   
   editorLoaded() {
     // load the design json here
-    this.emailEditor.loadDesign({});
+    this.emailEditor.editor.loadDesign({});
   }
 
   exportHtml() {
-    this.emailEditor.exportHtml((data) => console.log('exportHtml', data));
+    this.emailEditor.editor.exportHtml((data) => console.log('exportHtml', data));
   }
 }
 ```
