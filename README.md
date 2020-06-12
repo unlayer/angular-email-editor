@@ -56,7 +56,7 @@ export class AppComponent {
   
   editorLoaded() {
     // load the design json here
-    this.emailEditor.editor.loadDesign({});
+    // this.emailEditor.editor.loadDesign({});
   }
 
   exportHtml() {
