@@ -22,17 +22,17 @@ export class ExampleComponent implements OnInit {
   private emailEditor: EmailEditorComponent;
 
   editorLoaded(event) {
-    this.emailEditor.loadDesign(sample);
+    this.emailEditor.editor.loadDesign(sample);
   }
 
   saveDesign() {
-    this.emailEditor.saveDesign(
+    this.emailEditor.editor.saveDesign(
       (data) => console.log('saveDesign', data)
     );
   }
 
   exportHtml() {
-    this.emailEditor.exportHtml(
+    this.emailEditor.editor.exportHtml(
       (data) => console.log('exportHtml', data)
     );
   }

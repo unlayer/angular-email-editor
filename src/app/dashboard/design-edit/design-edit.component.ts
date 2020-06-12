@@ -23,13 +23,13 @@ export class DesignEditComponent implements OnInit {
   }
 
   saveDesign() {
-    this.emailEditor.saveDesign(
+    this.emailEditor.editor.saveDesign(
       (data) => console.log('saveDesign', data)
     );
   }
 
   exportHtml() {
-    this.emailEditor.exportHtml(
+    this.emailEditor.editor.exportHtml(
       (data) => console.log('exportHtml', data)
     );
   }
