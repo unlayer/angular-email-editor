@@ -12,7 +12,7 @@ export class DesignEditComponent implements OnInit {
   };
 
 
-  @ViewChild('editor', {static: false})
+  @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
   constructor() { }

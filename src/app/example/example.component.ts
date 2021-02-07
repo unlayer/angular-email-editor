@@ -13,7 +13,7 @@ export class ExampleComponent implements OnInit {
   options = {
   };
 
-  @ViewChild('editor', {static: false})
+  @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
   constructor() { }
