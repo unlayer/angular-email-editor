@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { EmailEditorComponent } from 'email-editor';
+import { EmailEditorComponent } from 'angular-email-editor';
 
 import sample from './sample.json';
 
