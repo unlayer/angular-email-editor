@@ -1,4 +1,11 @@
-import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  AfterViewInit,
+  Input,
+  Output,
+  EventEmitter,
+} from '@angular/core';
 import { loadScript } from './loadScript';
 import pkg from './source.json';
 
@@ -23,16 +30,16 @@ let lastEditorId = 0;
   // tslint:disable-next-line:component-selector
   selector: 'email-editor',
   templateUrl: './email-editor.component.html',
-  styleUrls: ['./email-editor.component.css']
+  styleUrls: ['./email-editor.component.css'],
 })
 export class EmailEditorComponent implements OnInit, AfterViewInit {
-
   @Input() editorId: string;
   @Input() options: UnlayerOptions = {};
   @Input() projectId: number;
   @Input() tools: object;
   @Input() appearance: object;
   @Input() locale: string;
+  @Input() displayMode: string;
 
   @Input() minHeight = '500px';
 
@@ -42,7 +49,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
   constructor() {
     this.editorId = `editor-${++lastEditorId}`;
-   }
+  }
 
   ngOnInit() {}
 
@@ -52,6 +59,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
   protected loadEditor() {
     const options: UnlayerOptions = this.options || {};
+    const displayMode = this.displayMode || 'email';
 
     if (this.projectId) {
       options.projectId = this.projectId;
@@ -72,7 +80,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
     this.editor = unlayer.createEditor({
       ...options,
       id: this.editorId,
-      displayMode: 'email',
+      displayMode,
       source: {
         name: pkg.name,
         version: pkg.version,
@@ -93,5 +101,4 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   public exportHtml(cb: (data: object) => void) {
     this.editor.exportHtml(cb);
   }
-
 }
