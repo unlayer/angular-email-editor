@@ -13,13 +13,13 @@ export class ExampleComponent implements OnInit {
   options = {
   };
 
+  @ViewChild('editor')
+  private emailEditor: EmailEditorComponent;
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  @ViewChild('editor')
-  private emailEditor: EmailEditorComponent;
 
   editorLoaded(event) {
     this.emailEditor.editor.loadDesign(sample);
