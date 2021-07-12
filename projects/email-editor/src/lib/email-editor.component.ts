@@ -39,12 +39,17 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Input() tools: object;
   @Input() appearance: object;
   @Input() locale: string;
+  @Input() id: string;
 
   @Input() minHeight = '500px';
 
   @Output() loaded = new EventEmitter();
 
   editor: any;
+
+  constructor() {
+    this.id = this.editorId || `editor-${++lastEditorId}`;
+  }
 
   ngOnInit() {}
 
@@ -73,7 +78,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
     this.editor = unlayer.createEditor({
       ...options,
-      id: this.editorId || `editor-${++lastEditorId}`,
+      id: this.id,
       displayMode: 'email',
       source: {
         name: pkg.name,
