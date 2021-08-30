@@ -11,13 +11,14 @@ export class DesignEditComponent implements OnInit {
   options = {
   };
 
+
+  @ViewChild('editor')
+  private emailEditor: EmailEditorComponent;
+
   constructor() { }
 
   ngOnInit() {
   }
-
-  @ViewChild('editor')
-  private emailEditor: EmailEditorComponent;
 
   editorLoaded(event) {
   }
