@@ -4,34 +4,35 @@ import { EmailEditorComponent } from 'email-editor';
 @Component({
   selector: 'app-design-edit',
   templateUrl: './design-edit.component.html',
-  styleUrls: ['./design-edit.component.css']
+  styleUrls: ['./design-edit.component.css'],
 })
 export class DesignEditComponent implements OnInit {
+  options = {};
 
-  options = {
-  };
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
   editorLoaded(event) {
+    console.log('editorLoaded');
+  }
+
+  editorReady() {
+    console.log('editorReady');
   }
 
   saveDesign() {
-    this.emailEditor.editor.saveDesign(
-      (data) => console.log('saveDesign', data)
+    this.emailEditor.editor.saveDesign((data) =>
+      console.log('saveDesign', data)
     );
   }
 
   exportHtml() {
-    this.emailEditor.editor.exportHtml(
-      (data) => console.log('exportHtml', data)
+    this.emailEditor.editor.exportHtml((data) =>
+      console.log('exportHtml', data)
     );
   }
-
 }
