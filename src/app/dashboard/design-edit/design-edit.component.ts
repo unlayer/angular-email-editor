@@ -16,10 +16,6 @@ export class DesignEditComponent implements OnInit {
   @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded(event) {
-    console.log('editorLoaded');
-  }
-
   editorReady() {
     console.log('editorReady');
   }

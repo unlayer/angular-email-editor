@@ -43,7 +43,9 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
   @Input() minHeight = '500px';
 
+  // @deprecated
   @Output() loaded = new EventEmitter();
+
   @Output() ready = new EventEmitter();
 
   editor: any;
@@ -87,6 +89,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
       },
     });
 
+    // @deprecated
     this.loaded.emit({});
 
     this.editor.addEventListener('editor:ready', () => {
