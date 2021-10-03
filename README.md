@@ -104,7 +104,7 @@ See the [example source](https://github.com/unlayer/angular-email-editor/tree/ma
 - `tools` `Object` configuration for the built-in and custom tools (default {})
 - `appearance` `Object` configuration for appearance and theme (default {})
 - `projectId` `Integer` Unlayer project ID (optional)
-- `loaded` `Function` called when the editor is created
+- `loaded` `Function` called when the editor instance is created
 - `ready` `Function` called when the editor has finished loading
 
 See the [Unlayer Docs](https://docs.unlayer.com/) for all available options.
