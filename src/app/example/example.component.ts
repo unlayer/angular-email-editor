@@ -18,6 +18,11 @@ export class ExampleComponent implements OnInit {
   @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
+  editorLoaded(event) {
+    console.log('editorLoaded');
+    this.emailEditor.editor.loadDesign(sample);
+  }
+
   editorReady() {
     console.log('editorReady');
   }

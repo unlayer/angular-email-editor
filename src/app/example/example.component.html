@@ -8,6 +8,7 @@
 
   <email-editor
     [options]="options"
+    (loaded)="editorLoaded($event)"
     (ready)="editorReady($event)"
     #editor
   ></email-editor>
