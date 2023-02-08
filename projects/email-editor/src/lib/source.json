@@ -1,8 +1,8 @@
 {
-  "name": "angular-email-editor",
-  "version": "0.9.0",
+  "name": "@trippete/angular-email-editor",
+  "version": "2.0.1",
   "peerDependencies": {
-    "@angular/common": "^7.0.0",
-    "@angular/core": "^7.0.0"
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0"
   }
 }
