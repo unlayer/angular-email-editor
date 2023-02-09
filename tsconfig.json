@@ -18,8 +18,5 @@
     },
     "resolveJsonModule": true,
     "esModuleInterop": true
-  },
-  "angularCompilerOptions": {
-    "enableIvy": false,
   }
 }

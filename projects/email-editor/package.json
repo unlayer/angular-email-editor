@@ -1,6 +1,6 @@
 {
-  "name": "@trippete/angular-email-editor",
-  "version": "2.0.1",
+  "name": "angular-email-editor",
+  "version": "1.0.0",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
     "@angular/core": "^15.0.0"
