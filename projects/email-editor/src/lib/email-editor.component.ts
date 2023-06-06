@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { loadScript } from './loadScript';
 import pkg from './source.json';
+import { filter, interval, take } from 'rxjs';
 
 declare module unlayer {
   function init(object);
@@ -59,39 +60,46 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   }
 
   protected loadEditor() {
-    const options: UnlayerOptions = this.options || {};
+    interval(300)
+      .pipe(
+        filter(() => !!document.getElementById(this.id)),
+        take(1)
+      )
+      .subscribe(() => {
+        const options: UnlayerOptions = this.options || {};
 
-    if (this.projectId) {
-      options.projectId = this.projectId;
-    }
+        if (this.projectId) {
+          options.projectId = this.projectId;
+        }
 
-    if (this.tools) {
-      options.tools = this.tools;
-    }
+        if (this.tools) {
+          options.tools = this.tools;
+        }
 
-    if (this.appearance) {
-      options.appearance = this.appearance;
-    }
+        if (this.appearance) {
+          options.appearance = this.appearance;
+        }
 
-    if (this.locale) {
-      options.locale = this.locale;
-    }
+        if (this.locale) {
+          options.locale = this.locale;
+        }
 
-    this.editor = unlayer.createEditor({
-      ...options,
-      id: this.id,
-      displayMode: 'email',
-      source: {
-        name: pkg.name,
-        version: pkg.version,
-      },
-    });
+        this.editor = unlayer.createEditor({
+          ...options,
+          id: this.id,
+          displayMode: 'email',
+          source: {
+            name: pkg.name,
+            version: pkg.version,
+          },
+        });
 
-    this.loaded.emit({});
+        this.loaded.emit({});
 
-    this.editor.addEventListener('editor:ready', () => {
-      this.ready.emit({});
-    });
+        this.editor.addEventListener('editor:ready', () => {
+          this.ready.emit({});
+        });
+      });
   }
 
   public loadDesign(data: object) {
