@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { EmailEditorComponent } from 'email-editor';
+import { EmailEditorComponent } from 'projects/email-editor/src/public_api';
 
 @Component({
   selector: 'app-design-edit',
