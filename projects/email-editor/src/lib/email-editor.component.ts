@@ -46,6 +46,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
   @Output() loaded = new EventEmitter();
   @Output() ready = new EventEmitter();
+  @Output() updated = new EventEmitter()
 
   editor: any;
 
@@ -98,6 +99,10 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
 
         this.editor.addEventListener('editor:ready', () => {
           this.ready.emit({});
+        });
+
+        this.editor.addEventListener('design:updated', (data) => {
+          this.updated.emit(data);
         });
       });
   }
