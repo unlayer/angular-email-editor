@@ -166,7 +166,6 @@
       }
     }
   },
-  "defaultProject": "angular-email-editor",
   "cli": {
     "analytics": "366b9919-d8cf-4c9a-93fd-9aa97cff40b9"
   }
