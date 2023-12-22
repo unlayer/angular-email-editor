@@ -26,6 +26,7 @@
 
 # misc
 /.sass-cache
+/.angular/cache
 /connect.lock
 /coverage
 /libpeerconnection.log
