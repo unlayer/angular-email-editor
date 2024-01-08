@@ -15,7 +15,7 @@ export class ExampleComponent implements OnInit {
 
   ngOnInit() {}
 
-  @ViewChild('editor')
+  @ViewChild('editor', { static: true })
   private emailEditor: EmailEditorComponent;
 
   editorLoaded(event) {
