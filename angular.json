@@ -13,6 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "aot": true,
             "outputPath": "dist/angular-email-editor",
             "index": "src/index.html",
             "main": "src/main.ts",
@@ -50,6 +51,10 @@
                   "type": "initial",
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb"
                 }
               ]
             }
@@ -142,6 +147,11 @@
           "options": {
             "tsConfig": "projects/email-editor/tsconfig.lib.json",
             "project": "projects/email-editor/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/email-editor/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -167,5 +177,8 @@
       }
     }
   },
-  "defaultProject": "angular-email-editor"
+  "defaultProject": "angular-email-editor",
+  "cli": {
+    "analytics": "27203cd5-6fd6-45a0-a0c8-17b5d6471105"
+  }
 }
