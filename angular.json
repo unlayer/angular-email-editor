@@ -138,7 +138,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/email-editor/tsconfig.lib.json",
             "project": "projects/email-editor/ng-package.json"
@@ -166,6 +166,5 @@
         }
       }
     }
-  },
-  "defaultProject": "angular-email-editor"
+  }
 }

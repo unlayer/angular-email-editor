@@ -20,7 +20,7 @@ export class DesignEditComponent implements OnInit {
     console.log('editorLoaded');
   }
 
-  editorReady() {
+  editorReady(event) {
     console.log('editorReady');
   }
 
