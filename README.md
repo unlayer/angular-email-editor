@@ -9,7 +9,7 @@ The excellent drag-n-drop email editor by [Unlayer](https://unlayer.com/embed) a
 
 ## Live Demo
 
-Check out the live demo here: https://angular-email-editor-demo.netlify.com/ ([Source Code](https://github.com/unlayer/angular-email-editor/tree/master/src))
+Check out the live demo here: https://angular-email-editor-demo.netlify.app/ ([Source Code](https://github.com/unlayer/angular-email-editor/tree/master/src))
 
 ## Installation
 
