@@ -13,25 +13,25 @@ export class DesignEditComponent implements OnInit {
 
   ngOnInit() {}
 
-  @ViewChild('editor')
+  @ViewChild('editor', { static: true })
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded(event) {
-    console.log('editorLoaded');
+  editorLoaded(event: any) {
+    console.log('editorLoaded', event);
   }
 
-  editorReady() {
-    console.log('editorReady');
+  editorReady(event: any) {
+    console.log('editorReady', event);
   }
 
   saveDesign() {
-    this.emailEditor.editor.saveDesign((data) =>
+    this.emailEditor.editor.saveDesign((data: any) =>
       console.log('saveDesign', data)
     );
   }
 
   exportHtml() {
-    this.emailEditor.editor.exportHtml((data) =>
+    this.emailEditor.editor.exportHtml((data: any) =>
       console.log('exportHtml', data)
     );
   }

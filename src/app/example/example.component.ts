@@ -23,7 +23,7 @@ export class ExampleComponent implements OnInit {
     this.emailEditor.editor.loadDesign(sample);
   }
 
-  editorReady() {
+  editorReady(event) {
     console.log('editorReady');
   }
 
