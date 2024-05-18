@@ -166,6 +166,5 @@
         }
       }
     }
-  },
-  "defaultProject": "angular-email-editor"
+  }
 }
