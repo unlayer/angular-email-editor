@@ -16,7 +16,7 @@ Check out the live demo here: https://angular-email-editor-demo.netlify.app/ ([S
 The easiest way to use Angular Email Editor is to install it from Npm or Yarn and include it in your own Angular build process.
 
 ```
-npm install angular-email-editor --save
+npm install @z-trippete/angular-email-editor --save
 ```
 
 ## Usage

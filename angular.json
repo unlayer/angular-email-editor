@@ -39,7 +39,6 @@
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
-              "extractCss": true,
               "namedChunks": false,
               "aot": true,
               "extractLicenses": true,
@@ -138,7 +137,7 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/email-editor/tsconfig.lib.json",
             "project": "projects/email-editor/ng-package.json"
@@ -167,5 +166,7 @@
       }
     }
   },
-  "defaultProject": "angular-email-editor"
+  "cli": {
+    "analytics": "366b9919-d8cf-4c9a-93fd-9aa97cff40b9"
+  }
 }
