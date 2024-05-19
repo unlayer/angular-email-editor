@@ -16,11 +16,11 @@ export class DesignEditComponent implements OnInit {
   @ViewChild('editor', { static: true })
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded(event: any) {
+  editorLoaded(event) {
     console.log('editorLoaded', this.emailEditor.editor);
   }
 
-  editorReady(event: any) {
+  editorReady(event) {
     console.log('editorReady', this.emailEditor.editor);
   }
 
