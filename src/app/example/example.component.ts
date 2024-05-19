@@ -22,14 +22,14 @@ export class ExampleComponent implements OnInit {
   @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded(event) {
+  editorLoaded() {
     this.emailEditor.editor.addEventListener('design:loaded', () => {
       console.log('design:loaded', this.emailEditor.editor);
     });
     this.emailEditor.editor.loadDesign(sample);
   }
 
-  editorReady(event) {
+  editorReady() {
     console.log('editorReady', this.emailEditor.editor);
   }
 
