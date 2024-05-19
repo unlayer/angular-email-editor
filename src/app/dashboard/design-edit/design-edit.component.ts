@@ -17,21 +17,21 @@ export class DesignEditComponent implements OnInit {
   private emailEditor: EmailEditorComponent;
 
   editorLoaded(event: any) {
-    console.log('editorLoaded', event);
+    console.log('editorLoaded', this.emailEditor.editor);
   }
 
   editorReady(event: any) {
-    console.log('editorReady', event);
+    console.log('editorReady', this.emailEditor.editor);
   }
 
   saveDesign() {
-    this.emailEditor.editor.saveDesign((data: any) =>
+    this.emailEditor.editor.saveDesign((data) =>
       console.log('saveDesign', data)
     );
   }
 
   exportHtml() {
-    this.emailEditor.editor.exportHtml((data: any) =>
+    this.emailEditor.editor.exportHtml((data) =>
       console.log('exportHtml', data)
     );
   }
