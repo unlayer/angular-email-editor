@@ -16,7 +16,9 @@
             "outputPath": "dist/angular-email-editor",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "zone.js"
+            ],
             "tsConfig": "src/tsconfig.app.json",
             "assets": [
               "src/favicon.ico",
@@ -58,27 +60,28 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-email-editor:build"
+            "buildTarget": "angular-email-editor:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-email-editor:build:production"
+              "buildTarget": "angular-email-editor:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-email-editor:build"
+            "buildTarget": "angular-email-editor:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
             "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
             "styles": [
               "src/styles.css"
             ],
@@ -132,13 +135,13 @@
       }
     },
     "email-editor": {
+      "projectType": "library",
       "root": "projects/email-editor",
       "sourceRoot": "projects/email-editor/src",
-      "projectType": "library",
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/email-editor/tsconfig.lib.json",
             "project": "projects/email-editor/ng-package.json"
@@ -147,9 +150,11 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "main": "projects/email-editor/src/test.ts",
             "tsConfig": "projects/email-editor/tsconfig.spec.json",
-            "karmaConfig": "projects/email-editor/karma.conf.js"
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         },
         "lint": {
@@ -167,5 +172,7 @@
       }
     }
   },
-  "defaultProject": "angular-email-editor"
+  "cli": {
+    "analytics": false
+  }
 }

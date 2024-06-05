@@ -10,11 +10,11 @@ import { loadScript } from './loadScript';
 import pkg from './source.json';
 
 declare module unlayer {
-  function init(object);
-  function createEditor(object);
-  function loadDesign(object);
-  function saveDesign(Function);
-  function exportHtml(Function);
+  function init(object: any): any;
+  function createEditor(object: any): any;
+  function loadDesign(object: any): any;
+  function saveDesign(Function: any): any;
+  function exportHtml(Function: any): any;
 }
 
 export interface UnlayerOptions {
@@ -33,12 +33,12 @@ let lastEditorId = 0;
   styleUrls: ['./email-editor.component.css'],
 })
 export class EmailEditorComponent implements OnInit, AfterViewInit {
-  @Input() editorId: string;
+  @Input() editorId: string | undefined;
   @Input() options: UnlayerOptions = {};
-  @Input() projectId: number;
-  @Input() tools: object;
-  @Input() appearance: object;
-  @Input() locale: string;
+  @Input() projectId: number | undefined;
+  @Input() tools: object | undefined;
+  @Input() appearance: object | undefined;
+  @Input() locale: string | undefined;
   @Input() id: string;
 
   @Input() minHeight = '500px';

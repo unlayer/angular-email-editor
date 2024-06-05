@@ -16,25 +16,25 @@ export class ExampleComponent implements OnInit {
   ngOnInit() {}
 
   @ViewChild('editor')
-  private emailEditor: EmailEditorComponent;
+  private emailEditor: EmailEditorComponent | undefined;
 
-  editorLoaded(event) {
+  editorLoaded(event: any) {
     console.log('editorLoaded');
-    this.emailEditor.editor.loadDesign(sample);
+    this.emailEditor?.editor.loadDesign(sample);
   }
 
-  editorReady() {
+  editorReady(event: any) {
     console.log('editorReady');
   }
 
   saveDesign() {
-    this.emailEditor.editor.saveDesign((data) =>
+    this.emailEditor?.editor.saveDesign((data: any) =>
       console.log('saveDesign', data)
     );
   }
 
   exportHtml() {
-    this.emailEditor.editor.exportHtml((data) =>
+    this.emailEditor?.editor.exportHtml((data: any) =>
       console.log('exportHtml', data)
     );
   }
