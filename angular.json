@@ -167,5 +167,8 @@
       }
     }
   },
-  "defaultProject": "angular-email-editor"
+  "defaultProject": "angular-email-editor",
+  "cli": {
+    "analytics": false
+  }
 }
