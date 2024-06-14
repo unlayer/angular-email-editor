@@ -9,7 +9,11 @@ import sample from './sample.json';
   styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent implements OnInit {
-  options = {};
+  options = {
+    appearance: {
+      theme: 'modern_light',
+    },
+  };
 
   constructor() {}
 
@@ -18,12 +22,12 @@ export class ExampleComponent implements OnInit {
   @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded(event) {
+  editorLoaded($event) {
     console.log('editorLoaded');
     this.emailEditor.editor.loadDesign(sample);
   }
 
-  editorReady() {
+  editorReady($event) {
     console.log('editorReady');
   }
 
