@@ -9,7 +9,11 @@ import sample from './sample.json';
   styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent implements OnInit {
-  options = {};
+  options = {
+    appearance: {
+      theme: 'modern_light',
+    },
+  };
 
   constructor() {}
 
