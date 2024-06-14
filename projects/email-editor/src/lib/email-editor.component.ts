@@ -8,7 +8,6 @@ import {
 } from '@angular/core';
 import { loadScript } from './loadScript';
 import pkg from './source.json';
-import { Editor, UnlayerOptions, ToolsConfig, JSONTemplate } from '../types';
 
 declare module unlayer {
   function init(object);
@@ -16,6 +15,13 @@ declare module unlayer {
   function loadDesign(object);
   function saveDesign(Function);
   function exportHtml(Function);
+}
+
+export interface UnlayerOptions {
+  projectId?: number;
+  tools?: object;
+  appearance?: object;
+  locale?: string;
 }
 
 let lastEditorId = 0;
@@ -30,7 +36,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Input() editorId: string;
   @Input() options: UnlayerOptions = {};
   @Input() projectId: number;
-  @Input() tools: ToolsConfig;
+  @Input() tools: object;
   @Input() appearance: object;
   @Input() locale: string;
   @Input() id: string;
@@ -40,7 +46,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Output() loaded = new EventEmitter();
   @Output() ready = new EventEmitter();
 
-  editor: Editor;
+  editor: any;
 
   constructor() {
     this.id = this.editorId || `editor-${++lastEditorId}`;
@@ -88,15 +94,15 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
     });
   }
 
-  public loadDesign(data: JSONTemplate) {
+  public loadDesign(data: object) {
     this.editor.loadDesign(data);
   }
 
-  public saveDesign(cb: (data) => void) {
+  public saveDesign(cb: (data: object) => void) {
     this.editor.saveDesign(cb);
   }
 
-  public exportHtml(cb: (data) => void) {
+  public exportHtml(cb: (data: object) => void) {
     this.editor.exportHtml(cb);
   }
 }
