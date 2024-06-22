@@ -1,0 +1,11 @@
+import { StockLocale } from './TranslationTypes';
+export type Locale = StockLocale | 'en-US';
+export type TextDirection = 'ltr' | 'rtl';
+export declare const DEFAULT_LOCALE = "en-US";
+export declare const RTL_COUNTRIES: string[];
+export declare function getLocale(): Locale;
+export declare function setLocale(locale: Locale | null): void;
+export declare function getTextDirection(): TextDirection | undefined;
+export declare function getTextDirectionForLocale(locale: Locale): TextDirection | undefined;
+export declare function setTextDirection(textDirection: TextDirection | null): void;
+export declare function isRTL(locale: Locale): boolean;

@@ -72,6 +72,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
     }
 
     this.editor = unlayer.createEditor({
+      // ignore error
       ...options,
       id: this.id,
       displayMode: 'email',

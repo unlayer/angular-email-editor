@@ -1,13 +1,21 @@
-/// <reference path="../../../node_modules/unlayer-types/embed.d.ts" />
-
-import Embed from 'embed/index';
-import { Editor as EditorClass } from 'embed/Editor';
+import { Editor as EditorClass } from './types/Editor';
 import {
   JSONTemplate as JSONTemplateType,
   ToolsConfig as ToolsConfigInterface,
-} from 'state/types/types';
+} from './types/StateTypes';
 
-export type Unlayer = typeof Embed;
+import { Config } from './types/Config';
+
+class Embed extends EditorClass {
+  createEditor(config: Config) {
+    return new EditorClass(config);
+  }
+}
+
+export default new Embed();
+
+
+export type Unlayer = InstanceType<typeof Embed>;
 export type UnlayerOptions = Parameters<Unlayer['createEditor']>[0];
 export type Editor = InstanceType<typeof EditorClass>;
 
