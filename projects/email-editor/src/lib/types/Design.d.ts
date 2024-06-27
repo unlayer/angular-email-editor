@@ -59,7 +59,7 @@ export interface Entities {
             [embeddedSource: string]: any;
             type: string;
             slug?: string;
-            location: Location;
+            location?: Location;
             values: Record<string, any>;
         };
     };
