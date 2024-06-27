@@ -21,7 +21,13 @@ export class AppComponent {
 
   editorLoaded($event) {
     console.log('editorLoaded');
-    this.emailEditor.editor.loadDesign({});
+    this.emailEditor.editor.loadDesign({ counters: {}, body: {
+      id: 'test',
+      rows: [],
+      headers: [],
+      footers: [],
+      values: {}
+    }, schemaVersion: 2 });
   }
 
   editorReady($event) {
