@@ -1,6 +1,6 @@
 import { DisplayMode } from './StateTypes';
 export declare const ENABLE_BACKGROUND_POSITION_FOR_EMAILS = true;
-export type Position = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
+export declare type Position = 'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right';
 export declare function positionToMarginArray(position: Position | undefined): string[] | readonly [0, "auto", "auto", 0] | readonly [0, "auto", "auto", "auto"] | readonly [0, 0, "auto", "auto"] | readonly ["auto", "auto", "auto", 0] | readonly ["auto"] | readonly ["auto", 0, "auto", "auto"] | readonly ["auto", "auto", 0, 0] | readonly ["auto", "auto", 0, "auto"] | readonly ["auto", 0, 0, "auto"];
 export declare function positionToBackgroundPosition(position: Position | undefined): 'top left' | 'top center' | 'top right' | 'center left' | 'center center' | 'center right' | 'bottom left' | 'bottom center' | 'bottom right' | 'auto auto';
 export declare function valuesToBackgroundPositionCSS(values: {

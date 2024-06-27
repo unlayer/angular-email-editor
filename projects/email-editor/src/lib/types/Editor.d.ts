@@ -2,9 +2,8 @@ import { Frame } from './Frame';
 import { Config, ExportFromApiResult, ExportHtmlOptions, ExportHtmlResult, ExportPlainTextResult, ExportImageFromApiOptions, ExportLiveHtmlOptions, ExportPdfFromApiOptions, ExportPlainTextOptions, ExportZipFromApiOptions, SaveDesignOptions, ExportLiveHtmlResult } from './Config';
 import { AppearanceConfig, Audit, DesignTagsConfig, Device, DisplayConditions, DisplayMode, JSONTemplate, LinkTypes, LinkTypesSharedConfig, MergeTags, MergeTagsConfig, SpecialLink, Tabs, Translations, User, Validator } from './StateTypes';
 import { BodyValues } from './BodyValues';
-import { Locale, TextDirection } from './intl';
+import { Locale, TextDirection } from './Intl';
 import { DeepPartial } from './EditorTypes';
-
 export declare const LATEST_VERSION: string;
 export declare const STABLE_VERSION: string;
 export declare class Editor {

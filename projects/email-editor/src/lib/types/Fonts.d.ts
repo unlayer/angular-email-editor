@@ -6,7 +6,7 @@ export interface Font {
     url?: string;
     weights?: number[];
 }
-export type FontList = Font[];
+export declare type FontList = Font[];
 export interface FontConfig {
     showDefaultFonts?: boolean;
     customFonts?: FontList;

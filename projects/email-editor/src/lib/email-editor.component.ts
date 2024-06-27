@@ -8,7 +8,7 @@ import {
 } from '@angular/core';
 import { loadScript } from './loadScript';
 import pkg from './source.json';
-import { Editor, UnlayerOptions, ToolsConfig, JSONTemplate } from '../types';
+import { Editor, Config, ToolsConfig, JSONTemplate } from './types/index';
 
 declare module unlayer {
   function init(object);
@@ -28,7 +28,7 @@ let lastEditorId = 0;
 })
 export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Input() editorId: string;
-  @Input() options: UnlayerOptions = {};
+  @Input() options: Config = {};
   @Input() projectId: number;
   @Input() tools: ToolsConfig;
   @Input() appearance: object;
@@ -40,7 +40,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Output() loaded = new EventEmitter();
   @Output() ready = new EventEmitter();
 
-  editor: Editor;
+  editor: InstanceType<typeof Editor>;
 
   constructor() {
     this.id = this.editorId || `editor-${++lastEditorId}`;
@@ -53,7 +53,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   }
 
   protected loadEditor() {
-    const options: UnlayerOptions = this.options || {};
+    const options: Config = this.options || {};
 
     if (this.projectId) {
       options.projectId = this.projectId;
@@ -72,7 +72,6 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
     }
 
     this.editor = unlayer.createEditor({
-      // ignore error
       ...options,
       id: this.id,
       displayMode: 'email',

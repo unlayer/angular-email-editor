@@ -1,6 +1,6 @@
 import { StockLocale } from './TranslationTypes';
-export type Locale = StockLocale | 'en-US';
-export type TextDirection = 'ltr' | 'rtl';
+export declare type Locale = StockLocale | 'en-US';
+export declare type TextDirection = 'ltr' | 'rtl';
 export declare const DEFAULT_LOCALE = "en-US";
 export declare const RTL_COUNTRIES: string[];
 export declare function getLocale(): Locale;

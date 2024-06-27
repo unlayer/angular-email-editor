@@ -1,4 +1,4 @@
-export type Message = object;
+export declare type Message = object;
 export interface MessageData {
     action: string;
     callbackId: number;

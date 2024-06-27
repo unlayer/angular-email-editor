@@ -1,8 +1,7 @@
-// import { IconDefinition } from '@fortawesome/pro-regular-svg-icons';
 import { AppearanceConfig, Device, DisplayMode, Location, Variant } from './StateTypes';
-export type LoadingState = 'not-loaded' | 'loading' | 'loaded';
-export type UpdatingState = 'updating' | undefined;
-export type DeletionState = 'deleting' | 'failed' | undefined;
+export declare type LoadingState = 'not-loaded' | 'loading' | 'loaded';
+export declare type UpdatingState = 'updating' | undefined;
+export declare type DeletionState = 'deleting' | 'failed' | undefined;
 export interface EditorProps<Value, WidgetParams = object> {
     value: Value | undefined;
     defaultValue: Value | undefined;
@@ -54,7 +53,7 @@ export interface EditorProps<Value, WidgetParams = object> {
     project: object;
     onImageClick?: (url: string) => void;
 }
-export type HeadArguments = [
+export declare type HeadArguments = [
     Record<string, any>,
     Record<string, any>,
     {
@@ -70,17 +69,17 @@ export interface Head {
     js?: (...args: HeadArguments) => string | void;
     tags?: (...args: HeadArguments) => string[] | void;
 }
-export type CollaborationFilter = 'only_yours' | 'resolved';
+export declare type CollaborationFilter = 'only_yours' | 'resolved';
 export interface CollaborationFilterDetails {
     label?: string;
 }
-export type CollaborationType = 'feedback' | 'idea' | 'question' | 'urgent';
+export declare type CollaborationType = 'feedback' | 'idea' | 'question' | 'urgent';
 export interface CollaborationTypeDetails {
     label?: string;
-    icon: any // || IconDefinition;
+    icon: any;
     color: string | undefined;
 }
-export type CollaborationThreadStatus = 'open' | 'resolved';
+export declare type CollaborationThreadStatus = 'open' | 'resolved';
 export interface CollaborationThread {
     id: number;
     projectId: string | number;
@@ -107,6 +106,6 @@ export interface CollaborationUser {
     name: string | undefined;
     avatar: string | undefined;
 }
-export type DeepPartial<T> = T extends object ? {
+export declare type DeepPartial<T> = T extends object ? {
     [P in keyof T]?: DeepPartial<T[P]>;
 } : T;

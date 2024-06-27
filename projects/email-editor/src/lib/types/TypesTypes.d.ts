@@ -1,13 +1,11 @@
-// import * as Ariakit from '@ariakit/react';
-// import { MutableRefObject, ReactInstance } from 'react';
-import { State as Design } from './design';
+import { State as Design } from './Design';
 import { CollaborationThread } from './EditorTypes';
 import { Theme } from './ThemeTypes';
-export type DesignMode = 'live' | 'edit';
-export type Device = 'desktop' | 'mobile' | 'tablet';
-export type DisplayMode = 'web' | 'email' | 'popup' | 'document';
-export type Variant = 'amp' | null;
-export type Ui = 'none' | 'visual' | 'classic';
+export declare type DesignMode = 'live' | 'edit';
+export declare type Device = 'desktop' | 'mobile' | 'tablet';
+export declare type DisplayMode = 'web' | 'email' | 'popup' | 'document';
+export declare type Variant = 'amp' | null;
+export declare type Ui = 'none' | 'visual' | 'classic';
 export interface MergeTag {
     name: string;
     value?: string;
@@ -26,7 +24,7 @@ export interface MergeTag {
 export interface MergeTags {
     [name: string]: MergeTag;
 }
-export type MergeTagsValues = Record<string, string | number | Record<string, boolean | Array<Record<string, string | number>>>>;
+export declare type MergeTagsValues = Record<string, string | number | Record<string, boolean | Array<Record<string, string | number>>>>;
 export interface MergeTagsConfig {
     autocompleteTriggerChar?: string;
     sort?: boolean;
@@ -38,8 +36,8 @@ export interface DisplayCondition {
     before?: string;
     after?: string;
 }
-export type DisplayConditions = DisplayCondition[];
-export type SpecialLink = {
+export declare type DisplayConditions = DisplayCondition[];
+export declare type SpecialLink = {
     name: string;
     href: string;
     target?: string;
@@ -53,7 +51,7 @@ export type SpecialLink = {
 export interface SpecialLinks {
     [name: string]: SpecialLink;
 }
-export type LinkTypeFieldOption = {
+export declare type LinkTypeFieldOption = {
     value: string;
     label: string;
     enabled?: boolean;
@@ -64,7 +62,7 @@ export interface LinkTypeField {
     defaultValue?: string | LinkTypeFieldOption[] | undefined;
     enabled?: boolean;
     placeholderText?: string;
-    // inputType?: Ariakit.FormInputProps['type'];
+    inputType?: any;
     isClearable?: boolean;
     isCreatable?: boolean;
     isMulti?: boolean;
@@ -87,8 +85,8 @@ export interface LinkType {
     };
     fields?: LinkTypeField[];
 }
-export type LinkTypes = LinkType[];
-export type LinkTypesSharedConfig = Pick<LinkType, 'attrs' | 'fields'>;
+export declare type LinkTypes = LinkType[];
+export declare type LinkTypesSharedConfig = Pick<LinkType, 'attrs' | 'fields'>;
 export interface CustomFont {
     label: string;
     value: string;
@@ -98,20 +96,20 @@ export interface CustomFont {
 export interface CustomFonts {
     [label: string]: CustomFont;
 }
-export type DesignTag = string;
+export declare type DesignTag = string;
 export interface DesignTags {
     [name: string]: DesignTag;
 }
 export interface DesignTagsConfig {
     delimiter: [string, string];
 }
-export type CustomCSS = string | string[] | undefined | null;
-export type CustomJS = string | string[] | undefined | null;
+export declare type CustomCSS = string | string[] | undefined | null;
+export declare type CustomJS = string | string[] | undefined | null;
 export interface Translations {
     [name: string]: object;
 }
-export type Collection = 'bodies' | 'columns' | 'contents' | 'pages' | 'rows' | 'headers' | 'footers';
-export type Container = 'body' | 'row' | 'column' | 'content';
+export declare type Collection = 'bodies' | 'columns' | 'contents' | 'pages' | 'rows' | 'headers' | 'footers';
+export declare type Container = 'body' | 'row' | 'column' | 'content';
 export interface Location {
     collection: Collection;
     id: number | string;
@@ -124,7 +122,7 @@ export interface Selection {
     openedPanel?: 'images' | 'content' | 'uploads' | 'audit' | 'blocks';
 }
 export interface LayerGroup {
-    // elementRef: MutableRefObject<ReactInstance | undefined> | null | undefined;
+    elementRef: any;
     layerCollection: Location['collection'];
     layerIndex?: Placeholder['index'];
     parentCollection: Location['collection'];
@@ -132,7 +130,7 @@ export interface LayerGroup {
     placeholders: Partial<Record<NonNullable<Placeholder['index']>, Placeholder | undefined>>;
 }
 export interface Placeholder {
-    // elementRef: MutableRefObject<ReactInstance | undefined> | null | undefined;
+    elementRef: any;
     active?: boolean;
     index: number | 'first' | 'last' | undefined;
     layerGroupParentLocation: Location | undefined;
@@ -158,7 +156,7 @@ export interface Usage {
     customJS?: boolean;
     fileStorage?: boolean;
 }
-export type ImageSource = 'unsplash' | 'pixabay' | 'pexel' | 'user';
+export declare type ImageSource = 'unsplash' | 'pixabay' | 'pexel' | 'user';
 export interface Image {
     id: number;
     location: string;
@@ -169,8 +167,8 @@ export interface Image {
     source: ImageSource | null;
     optimistic?: boolean;
 }
-export type ArrayItem<T> = T extends (infer I)[] ? I : T extends readonly (infer I)[] ? I : unknown;
-export type BodyItem = Array<{
+export declare type ArrayItem<T> = T extends (infer I)[] ? I : T extends readonly (infer I)[] ? I : unknown;
+export declare type BodyItem = Array<{
     id: string;
     cells: number[];
     columns: Array<{
@@ -180,7 +178,7 @@ export type BodyItem = Array<{
     }>;
     values: {};
 }>;
-export type JSONTemplate = {
+export declare type JSONTemplate = {
     counters: Record<string, number>;
     body: {
         id: string | undefined;
@@ -191,40 +189,40 @@ export type JSONTemplate = {
     };
     schemaVersion?: number;
 };
-export type Fonts = {
+export declare type Fonts = {
     showDefaultFonts?: boolean;
     customFonts?: CustomFont[];
 };
-export type Icon = {
+export declare type Icon = {
     name?: string;
     data?: string;
     url?: string;
 };
-export type AuditTool = {
+export declare type AuditTool = {
     type: string;
     name?: string;
 };
-export type Rule = {
+export declare type Rule = {
     id: string;
     icon: string | string[] | undefined;
     title: string;
     description: string;
     severity: 'ERROR' | 'WARNING';
 };
-export type Audit = {
+export declare type Audit = {
     location?: Location;
     tool?: AuditTool;
 } & Rule;
-export type Validator = (info: {
+export declare type Validator = (info: {
     [id: string]: unknown;
     html?: string;
     defaultErrors?: Audit[];
 }) => Promise<Audit[]>;
-type GroupedAuditError = {
+declare type GroupedAuditError = {
     location: Location;
     tool?: AuditTool;
 };
-export type GroupedAudit = {
+export declare type GroupedAudit = {
     [id: string]: {
         icon: string;
         title: string;
@@ -232,11 +230,11 @@ export type GroupedAudit = {
         errors: GroupedAuditError[];
     };
 };
-export type AuditApiResult = {
+export declare type AuditApiResult = {
     status: 'FAIL' | 'PASS';
     errors: Audit[];
 };
-export type Tabs = {
+export declare type Tabs = {
     [tabName: string]: {
         enabled?: boolean;
         type?: string;
@@ -245,19 +243,19 @@ export type Tabs = {
         active?: boolean;
     };
 };
-export type SocialIcon = {
+export declare type SocialIcon = {
     name: string;
     url: string;
     imgUrl?: string;
 };
-export type SocialCustomIcon = {
+export declare type SocialCustomIcon = {
     name: string;
     url: string;
     icons: {
         [key: string]: string;
     }[];
 };
-export type AppearanceConfig = {
+export declare type AppearanceConfig = {
     actionBar?: {
         placement?: 'top' | 'bottom' | 'top_left' | 'top_right' | 'bottom_left' | 'bottom_right' | undefined;
     };
@@ -291,7 +289,7 @@ export interface ToolConfig {
 export interface ToolsConfig {
     [key: string]: ToolConfig;
 }
-export type User = {
+export declare type User = {
     id?: string | number;
     name?: string | null | undefined;
     avatar?: string | null | undefined;

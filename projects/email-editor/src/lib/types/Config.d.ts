@@ -1,9 +1,7 @@
-// import { ValidationResult } from 'amphtml-validator';
-import { FontList } from './fonts';
-import { TextDirection } from './intl';
+import { FontList } from './Fonts';
+import { TextDirection } from './Intl';
 import { AppearanceConfig, Audit, Device, DisplayConditions, DisplayMode, Fonts, JSONTemplate, LinkTypes, LinkTypesSharedConfig, MergeTags, MergeTagsConfig, MergeTagsValues, SpecialLinks, Tabs, ToolsConfig, User } from './StateTypes';
 import { DeepPartial } from './EditorTypes';
-
 export interface Config {
     id?: string;
     className?: string;
@@ -78,7 +76,7 @@ export interface ExportHtmlResult {
         enabled: boolean;
         format: 'AMP' | 'AMP4EMAIL';
         html: string | undefined;
-        validation: any //|| ValidationResult;
+        validation: any;
     };
     chunks: ExportChunksResult;
     design: JSONTemplate;

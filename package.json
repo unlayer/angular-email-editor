@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "build-lib": "cp projects/email-editor/package.json projects/email-editor/src/lib/source.json && ng build email-editor",
+    "build-lib": "cp projects/email-editor/package.json projects/email-editor/src/lib/source.json && ng build email-editor && cp projects/email-editor/src/lib/**/*.d.ts dist/email-editor/lib/types",
     "npm-pack": "cd dist/email-editor && npm pack",
     "copy-readme": "cp README.md dist/email-editor",
     "package": "npm run build-lib && npm run copy-readme && npm run npm-pack",
@@ -40,11 +40,8 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.0.0",
-    "mitt": "^3.0.1",
     "ng-packagr": "^15.0.0",
-    "redux": "4.2.1",
     "typesafe-actions": "^2.0.4",
-    "typescript": "~4.8.4",
-    "unlayer-types": "^1.33.0"
+    "typescript": "~4.8.4"
   }
 }

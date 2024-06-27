@@ -1,4 +1,3 @@
-// import { RootAction } from './RootAction';
 import { Location, Device } from './StateTypes';
 export interface Entities {
     headers: {
@@ -87,4 +86,3 @@ export interface State extends Entities {
     schemaVersion: number | undefined;
     loadedAt: number;
 }
-// export default function reducer(state: State, action: RootAction): State;

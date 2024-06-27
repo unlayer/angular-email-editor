@@ -1,5 +1,5 @@
 import { AppearanceConfig } from './TypesTypes';
-export type Theme = {
+export declare type Theme = {
     name: 'classic_light' | 'classic_dark' | 'modern_light' | 'modern_dark';
     isDark: boolean;
     isClassic?: boolean;
@@ -391,21 +391,21 @@ export type Theme = {
         };
     };
 };
-export type ThemeVariant = 'primary' | 'secondary' | 'tertiary' | 'ai' | 'ai_outline' | 'danger';
-export type BannerMessageVariant = 'success' | 'warning' | 'default' | 'danger';
-export type ToastVariant = 'success' | 'warning' | 'default' | 'danger';
-export type ThemeColor = 'accent_01' | 'accent_02' | 'accent_03' | 'accent_04' | 'accent_05' | 'ai_01' | 'ai_02' | 'ai_03' | 'ai_04' | 'ai_05' | 'amp_01' | 'black_00' | 'black_01' | 'black_02' | 'black_03' | 'black_04' | 'black_05' | 'black_06' | 'black_07' | 'black_08' | 'black_09' | 'black_10' | 'destructive_01' | 'destructive_02' | 'destructive_03' | 'destructive_04' | 'destructive_05' | 'destructive_06' | 'destructive_07' | 'destructive_08' | 'destructive_09' | 'primary_01' | 'primary_02' | 'primary_03' | 'primary_04' | 'primary_05' | 'primary_06' | 'primary_07' | 'primary_08' | 'primary_09' | 'primary_10' | 'primary_11' | 'red_01' | 'success_01' | 'success_02' | 'success_03' | 'success_04' | 'success_05' | 'success_06' | 'success_07' | 'success_08' | 'success_09' | 'transparent' | 'warning_01' | 'warning_02' | 'warning_03' | 'warning_04' | 'warning_05' | 'warning_06' | 'warning_07' | 'warning_08' | 'warning_09' | 'white_00' | 'white_01' | 'white_02' | 'white_03' | 'white_04' | 'white_05' | 'white_06' | 'white_07' | 'white_08' | 'white_09';
-export type BorderRadius = 'none' | 'min' | 'mid' | 'max' | 'full';
-export type ButtonThemeObject = {
+export declare type ThemeVariant = 'primary' | 'secondary' | 'tertiary' | 'ai' | 'ai_outline' | 'danger';
+export declare type BannerMessageVariant = 'success' | 'warning' | 'default' | 'danger';
+export declare type ToastVariant = 'success' | 'warning' | 'default' | 'danger';
+export declare type ThemeColor = 'accent_01' | 'accent_02' | 'accent_03' | 'accent_04' | 'accent_05' | 'ai_01' | 'ai_02' | 'ai_03' | 'ai_04' | 'ai_05' | 'amp_01' | 'black_00' | 'black_01' | 'black_02' | 'black_03' | 'black_04' | 'black_05' | 'black_06' | 'black_07' | 'black_08' | 'black_09' | 'black_10' | 'destructive_01' | 'destructive_02' | 'destructive_03' | 'destructive_04' | 'destructive_05' | 'destructive_06' | 'destructive_07' | 'destructive_08' | 'destructive_09' | 'primary_01' | 'primary_02' | 'primary_03' | 'primary_04' | 'primary_05' | 'primary_06' | 'primary_07' | 'primary_08' | 'primary_09' | 'primary_10' | 'primary_11' | 'red_01' | 'success_01' | 'success_02' | 'success_03' | 'success_04' | 'success_05' | 'success_06' | 'success_07' | 'success_08' | 'success_09' | 'transparent' | 'warning_01' | 'warning_02' | 'warning_03' | 'warning_04' | 'warning_05' | 'warning_06' | 'warning_07' | 'warning_08' | 'warning_09' | 'white_00' | 'white_01' | 'white_02' | 'white_03' | 'white_04' | 'white_05' | 'white_06' | 'white_07' | 'white_08' | 'white_09';
+export declare type BorderRadius = 'none' | 'min' | 'mid' | 'max' | 'full';
+export declare type ButtonThemeObject = {
     backgroundColor: ColorValue;
     textColor: ColorValue;
     borderColor: ColorValue;
     borderRadius?: BorderRadiusValue;
     outlineColor?: ColorValue;
 };
-export type BorderRadiusValue = `{${BorderRadius}}`;
-export type ColorValue = `{${ThemeColor}}` | `darken(${number}%, {${ThemeColor}})` | `fade(${number}%, {${ThemeColor}})` | `lighten(${number}%, {${ThemeColor}})`;
-export type DeprecatedTheme = {
+export declare type BorderRadiusValue = `{${BorderRadius}}`;
+export declare type ColorValue = `{${ThemeColor}}` | `darken(${number}%, {${ThemeColor}})` | `fade(${number}%, {${ThemeColor}})` | `lighten(${number}%, {${ThemeColor}})`;
+export declare type DeprecatedTheme = {
     name: string;
     /** @deprecated */
     preferences: {

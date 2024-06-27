@@ -1,5 +1,5 @@
-import { Position } from './position';
-export type BackgroundImageEditorValue = {
+import { Position } from './Position';
+export declare type BackgroundImageEditorValue = {
     url: string | undefined;
     width: number | undefined;
     height: number | undefined;
@@ -9,9 +9,8 @@ export type BackgroundImageEditorValue = {
     repeat: 'no-repeat' | 'repeat-x' | 'repeat-y' | 'repeat' | undefined;
     position: Position | 'custom' | undefined;
     customPosition: [string, string];
-  };
-
-export type BodyValues = {
+};
+export declare type BodyValues = {
     backgroundColor: string;
     backgroundImage: BackgroundImageEditorValue;
     contentWidth: string;
