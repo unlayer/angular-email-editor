@@ -14,6 +14,8 @@ export class ExampleComponent implements OnInit {
       theme: 'modern_light',
     },
   };
+  scriptUrl = 'https://editor.unlayer.com/embed.js?2';
+
 
   constructor() {}
 

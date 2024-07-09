@@ -30,6 +30,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Input() editorId: string;
   @Input() options: UnlayerOptions = {};
   @Input() projectId: number;
+  @Input() scriptUrl: string;
   @Input() tools: ToolsConfig;
   @Input() appearance: object;
   @Input() locale: string;
@@ -49,7 +50,7 @@ export class EmailEditorComponent implements OnInit, AfterViewInit {
   ngOnInit() {}
 
   ngAfterViewInit() {
-    loadScript(this.loadEditor.bind(this));
+    loadScript(this.loadEditor.bind(this), this.scriptUrl);
   }
 
   protected loadEditor() {
