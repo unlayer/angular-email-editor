@@ -86,6 +86,16 @@ export class AppComponent {
 </div>
 ```
 
+Set skipLibCheck: true in tsconfig.json
+
+**tsconfig.json**
+
+```ts
+   "compilerOptions": {
+    "skipLibCheck": true,
+   }
+```
+
 ### Methods
 
 | method         | params              | description                                             |

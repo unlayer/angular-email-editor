@@ -1,9 +1,10 @@
 {
   "name": "angular-email-editor",
-  "version": "15.0.0",
+  "version": "15.1.0",
   "peerDependencies": {
     "@angular/common": "^15.0.0",
-    "@angular/core": "^15.0.0"
+    "@angular/core": "^15.0.0",
+     "unlayer-types": "latest"
   },
   "dependencies": {
     "tslib": "^2.3.0"
