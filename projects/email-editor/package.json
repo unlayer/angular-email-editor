@@ -1,6 +1,6 @@
 {
   "name": "@z-trippete/angular-email-editor",
-  "version": "18.1.0",
+  "version": "18.0.0",
   "repository": "https://github.com/z-trippete/angular-email-editor.git",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
