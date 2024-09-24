@@ -49,6 +49,6 @@
     "ts-node": "~10.9.2",
     "tslib": "^2.6.3",
     "tslint": "~5.20.1",
-    "typescript": "^5.5.3"
+    "typescript": "^5.4.0"
   }
 }
