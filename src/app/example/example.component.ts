@@ -13,6 +13,7 @@ export class ExampleComponent implements OnInit {
     appearance: {
       theme: 'modern_light',
     },
+    version: 'latest'
   };
   scriptUrl = 'https://editor.unlayer.com/embed.js?2';
 
