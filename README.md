@@ -93,8 +93,10 @@ Set `skipLibCheck: true` in `tsconfig.json`.
 **tsconfig.json**
 
 ```ts
-"compilerOptions": {
-  "skipLibCheck": true,
+{
+  "compilerOptions": {
+    "skipLibCheck": true,
+  }
 }
 ```
 
