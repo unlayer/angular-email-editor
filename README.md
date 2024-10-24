@@ -86,7 +86,9 @@ export class AppComponent {
 </div>
 ```
 
-Set skipLibCheck: true in tsconfig.json
+**Skip Lib Check**
+
+Set `skipLibCheck: true` in `tsconfig.json`.
 
 **tsconfig.json**
 
