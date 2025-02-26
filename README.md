@@ -25,6 +25,8 @@ Next, you'll need to import the Email Editor module in your app's module.
 
 **app.module.ts**
 
+> If you don't have an **app.module.ts** file, you can ignore this step and add `imports: [ EmailEditorModule ]` to your **app.component.ts** instead.
+
 ```ts
 
 import { EmailEditorModule } from 'angular-email-editor';
@@ -41,12 +43,13 @@ import { EmailEditorModule } from 'angular-email-editor';
 
 ```ts
 import { Component, ViewChild } from '@angular/core';
-import { EmailEditorComponent } from 'angular-email-editor';
+import { EmailEditorComponent, EmailEditorModule } from 'angular-email-editor';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
+  imports: [EmailEditorModule],
 })
 export class AppComponent {
   title = 'angular-email-editor';
