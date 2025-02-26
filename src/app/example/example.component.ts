@@ -9,40 +9,46 @@ import sample from './sample.json';
   styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent implements OnInit {
-  options = {
+  options: EmailEditorComponent['options'] = {
+    version: 'latest',
     appearance: {
-      theme: 'modern_light',
+      theme: 'modern_dark',
     },
-    version: 'latest'
   };
   scriptUrl = 'https://editor.unlayer.com/embed.js?2';
-
 
   constructor() {}
 
   ngOnInit() {}
 
   @ViewChild('editor')
-  private emailEditor: EmailEditorComponent;
+  private emailEditor!: EmailEditorComponent;
 
-  editorLoaded($event) {
-    console.log('editorLoaded');
-    this.emailEditor.editor.loadDesign(sample);
+  private get unlayer() {
+    return this.emailEditor.editor;
   }
 
-  editorReady($event) {
+  // called when the editor is created
+  editorLoaded() {
+    console.log('editorLoaded');
+    this.unlayer.loadDesign(sample);
+  }
+
+  // called when the editor has finished loading
+  editorReady() {
     console.log('editorReady');
   }
 
   saveDesign() {
-    this.emailEditor.editor.saveDesign((data) =>
+    this.unlayer.saveDesign((data) =>
       console.log('saveDesign', data)
     );
   }
 
   exportHtml() {
-    this.emailEditor.editor.exportHtml((data) =>
-      console.log('exportHtml', data)
-    );
+    this.unlayer.exportHtml((result) => {
+      // result object format: { html: string, design: object, amp: object, chunks: object }
+      console.log('exportHtml', result);
+    });
   }
 }

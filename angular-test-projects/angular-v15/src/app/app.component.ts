@@ -17,14 +17,14 @@ export class AppComponent {
   ngOnInit() {}
 
   @ViewChild('editor')
-  private emailEditor: EmailEditorComponent;
+  private emailEditor!: EmailEditorComponent;
 
-  editorLoaded($event) {
+  editorLoaded() {
     console.log('editorLoaded');
     this.emailEditor.editor.loadDesign({});
   }
 
-  editorReady($event) {
+  editorReady() {
     console.log('editorReady');
   }
 

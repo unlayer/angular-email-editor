@@ -2,7 +2,8 @@
 <div class="container">
   <button (click)="exportHtml()">Export</button>
   <email-editor
-    (loaded)="editorLoaded($event)"
-    (ready)="editorReady($event)"
+    [options]="options"
+    (loaded)="editorLoaded()"
+    (ready)="editorReady()"
   ></email-editor>
 </div>

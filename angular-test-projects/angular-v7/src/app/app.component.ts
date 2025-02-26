@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'angular-email-editor';
 
   @ViewChild(EmailEditorComponent)
-  private emailEditor: EmailEditorComponent;
+  private emailEditor!: EmailEditorComponent;
 
   // called when the editor is created
   editorLoaded() {

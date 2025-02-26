@@ -4,23 +4,29 @@ import { EmailEditorComponent } from 'angular-email-editor';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'angular-email-editor';
+  options: EmailEditorComponent['options'] = {
+    version: 'latest',
+    appearance: {
+      theme: 'modern_dark',
+    },
+  };
 
   @ViewChild(EmailEditorComponent)
-  private emailEditor: EmailEditorComponent;
+  private emailEditor!: EmailEditorComponent;
 
   // called when the editor is created
-  editorLoaded($event) {
+  editorLoaded() {
     console.log('editorLoaded');
     // load the design json here
     // this.emailEditor.editor.loadDesign({});
   }
 
   // called when the editor has finished loading
-  editorReady($event) {
+  editorReady() {
     console.log('editorReady');
   }
 
