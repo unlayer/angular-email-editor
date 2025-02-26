@@ -55,13 +55,18 @@ export class AppComponent {
   title = 'angular-email-editor';
 
   @ViewChild(EmailEditorComponent)
-  private emailEditor: EmailEditorComponent;
+  private emailEditor!: EmailEditorComponent;
+
+  private get unlayer() {
+    return this.emailEditor.editor;
+  }
 
   // called when the editor is created
   editorLoaded() {
     console.log('editorLoaded');
     // load the design json here
-    // this.emailEditor.editor.loadDesign({});
+    // you can get the design json by calling unlayer.exportHtml (see below)
+    // this.unlayer.loadDesign({ /* json object here */ });
   }
 
   // called when the editor has finished loading
@@ -70,9 +75,10 @@ export class AppComponent {
   }
 
   exportHtml() {
-    this.emailEditor.editor.exportHtml((data) =>
-      console.log('exportHtml', data)
-    );
+    this.unlayer.exportHtml((result) => {
+      // result object format: { html: string, design: object, amp: object, chunks: object }
+      console.log('exportHtml', result);
+    });
   }
 }
 ```
@@ -103,7 +109,11 @@ Set `skipLibCheck: true` in `tsconfig.json`.
 }
 ```
 
+See the [example source](https://github.com/unlayer/angular-email-editor/tree/master/src) for a reference implementation.
+
 ### Methods
+
+All unlayer methods are available in `this.unlayer`. Here are the most used ones:
 
 | method         | params              | description                                             |
 | -------------- | ------------------- | ------------------------------------------------------- |
@@ -111,7 +121,8 @@ Set `skipLibCheck: true` in `tsconfig.json`.
 | **saveDesign** | `Function callback` | Returns the design JSON in a callback function          |
 | **exportHtml** | `Function callback` | Returns the design HTML and JSON in a callback function |
 
-See the [example source](https://github.com/unlayer/angular-email-editor/tree/master/src) for a reference implementation.
+See the [Unlayer Docs](https://docs.unlayer.com/) for all available methods, or log the object in the console to explore it.
+
 
 ### Properties
 

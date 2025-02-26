@@ -9,7 +9,7 @@ export class AppComponent implements OnInit {
   title = 'angular-email-editor';
 
   @ViewChild(EmailEditorComponent)
-  private emailEditor: EmailEditorComponent;
+  private emailEditor!: EmailEditorComponent;
 
   ngOnInit(): void {}
   // called when the editor is created

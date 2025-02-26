@@ -17,7 +17,7 @@ export class AppComponent {
   ngOnInit() {}
 
   @ViewChild('editor')
-  private emailEditor: EmailEditorComponent;
+  private emailEditor!: EmailEditorComponent;
 
   editorLoaded() {
     console.log('editorLoaded');
