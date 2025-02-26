@@ -53,6 +53,12 @@ import { EmailEditorComponent, EmailEditorModule } from 'angular-email-editor';
 })
 export class AppComponent {
   title = 'angular-email-editor';
+  options: EmailEditorComponent['options'] = {
+    version: 'latest',
+    appearance: {
+      theme: 'modern_dark',
+    },
+  };
 
   @ViewChild(EmailEditorComponent)
   private emailEditor!: EmailEditorComponent;
@@ -89,6 +95,7 @@ export class AppComponent {
 <div class="container">
   <button (click)="exportHtml()">Export</button>
   <email-editor
+    [options]="options"
     (loaded)="editorLoaded()"
     (ready)="editorReady()"
   ></email-editor>

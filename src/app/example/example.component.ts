@@ -9,11 +9,11 @@ import sample from './sample.json';
   styleUrls: ['./example.component.css'],
 })
 export class ExampleComponent implements OnInit {
-  options = {
-    appearance: {
-      theme: 'modern_light',
-    },
+  options: EmailEditorComponent['options'] = {
     version: 'latest',
+    appearance: {
+      theme: 'modern_dark',
+    },
   };
   scriptUrl = 'https://editor.unlayer.com/embed.js?2';
 

@@ -8,6 +8,12 @@ import { EmailEditorComponent } from 'angular-email-editor';
 })
 export class AppComponent {
   title = 'angular-email-editor';
+  options: EmailEditorComponent['options'] = {
+    version: 'latest',
+    appearance: {
+      theme: 'modern_dark',
+    },
+  };
 
   @ViewChild(EmailEditorComponent)
   private emailEditor!: EmailEditorComponent;
