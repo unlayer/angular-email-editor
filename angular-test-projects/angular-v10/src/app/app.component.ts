@@ -11,18 +11,16 @@ export class AppComponent implements OnInit {
   @ViewChild(EmailEditorComponent)
   private emailEditor: EmailEditorComponent;
 
-  ngOnInit(): void {
-      
-  }
+  ngOnInit(): void {}
   // called when the editor is created
-  editorLoaded($event) {
+  editorLoaded() {
     console.log('editorLoaded');
     // load the design json here
     // this.emailEditor.editor.loadDesign({});
   }
 
   // called when the editor has finished loading
-  editorReady($event) {
+  editorReady() {
     console.log('editorReady');
   }
 

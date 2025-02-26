@@ -19,12 +19,12 @@ export class AppComponent {
   @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded($event) {
+  editorLoaded() {
     console.log('editorLoaded');
     this.emailEditor.editor.loadDesign({});
   }
 
-  editorReady($event) {
+  editorReady() {
     console.log('editorReady');
   }
 

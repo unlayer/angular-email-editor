@@ -13,10 +13,9 @@ export class ExampleComponent implements OnInit {
     appearance: {
       theme: 'modern_light',
     },
-    version: 'latest'
+    version: 'latest',
   };
   scriptUrl = 'https://editor.unlayer.com/embed.js?2';
-
 
   constructor() {}
 
@@ -25,12 +24,12 @@ export class ExampleComponent implements OnInit {
   @ViewChild('editor')
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded($event) {
+  editorLoaded() {
     console.log('editorLoaded');
     this.emailEditor.editor.loadDesign(sample);
   }
 
-  editorReady($event) {
+  editorReady() {
     console.log('editorReady');
   }
 

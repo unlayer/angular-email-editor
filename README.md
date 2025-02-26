@@ -80,8 +80,8 @@ export class AppComponent {
 <div class="container">
   <button (click)="exportHtml()">Export</button>
   <email-editor
-    (loaded)="editorLoaded($event)"
-    (ready)="editorReady($event)"
+    (loaded)="editorLoaded()"
+    (ready)="editorReady()"
   ></email-editor>
 </div>
 ```
