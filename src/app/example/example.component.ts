@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { EmailEditorComponent } from 'email-editor';
+import type { JSONTemplate } from '@unlayer/types';
 
 import sample from './sample.json';
 
@@ -31,7 +32,7 @@ export class ExampleComponent implements OnInit {
   // called when the editor is created
   editorLoaded() {
     console.log('editorLoaded');
-    this.unlayer.loadDesign(sample);
+    this.unlayer.loadDesign(sample as unknown as JSONTemplate);
   }
 
   // called when the editor has finished loading
