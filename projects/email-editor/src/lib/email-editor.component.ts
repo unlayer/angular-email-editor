@@ -28,10 +28,11 @@ export interface UnlayerOptions {
 let lastEditorId = 0;
 
 @Component({
-  // tslint:disable-next-line:component-selector
-  selector: 'email-editor',
-  templateUrl: './email-editor.component.html',
-  styleUrls: ['./email-editor.component.css'],
+    // tslint:disable-next-line:component-selector
+    selector: 'email-editor',
+    templateUrl: './email-editor.component.html',
+    styleUrls: ['./email-editor.component.css'],
+    standalone: false
 })
 export class EmailEditorComponent implements OnInit, AfterViewInit {
   @Input() editorId: string;

@@ -2,9 +2,10 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { EmailEditorComponent } from 'projects/email-editor/src/public_api';
 
 @Component({
-  selector: 'app-design-edit',
-  templateUrl: './design-edit.component.html',
-  styleUrls: ['./design-edit.component.css'],
+    selector: 'app-design-edit',
+    templateUrl: './design-edit.component.html',
+    styleUrls: ['./design-edit.component.css'],
+    standalone: false
 })
 export class DesignEditComponent implements OnInit {
   options = {};

@@ -4,9 +4,10 @@ import sample from './sample.json';
 import { EmailEditorComponent } from 'projects/email-editor/src/public_api';
 
 @Component({
-  selector: 'app-example',
-  templateUrl: './example.component.html',
-  styleUrls: ['./example.component.css'],
+    selector: 'app-example',
+    templateUrl: './example.component.html',
+    styleUrls: ['./example.component.css'],
+    standalone: false
 })
 export class ExampleComponent implements OnInit {
   options = {};
